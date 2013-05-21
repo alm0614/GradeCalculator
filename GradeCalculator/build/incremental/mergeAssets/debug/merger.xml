@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\src\main\assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\src\debug\assets" />
+    </dataSet>
+
+</merger>

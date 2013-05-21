@@ -1,0 +1,15 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1369093625791 434 0eb953903fc95cd9f9938f81545f3b4e20cfd3b8 T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\classes\debug\com\example\gradecalculator\R$drawable.class
+1369093625794 430 1fd0c1917a5c3514eb2de923d2dfa8161f929b2a T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\classes\debug\com\example\gradecalculator\R$layout.class
+1369093625795 415 93c18f2acaede836d450401370c3a979c1801fc6 T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\classes\debug\com\example\gradecalculator\R$menu.class
+1369091963749 484258 bd6479f5dd592790607e0504e66e0f31c2b4d308 T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\libs\android-support-v4.jar
+1369093625792 492 e448cc44132bb98c4b2a720752dea355c562d56a T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\classes\debug\com\example\gradecalculator\R$id.class
+1369091979941 367 aa5d35c9ff1595f8a2ab4e931fa6d0eac519a3c8 T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\classes\debug\com\example\gradecalculator\R$attr.class
+1369097922419 2111 8c0b6e8d4dca2410274ff8b0a1260c6ea63f829d T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\classes\debug\com\example\gradecalculator\MainActivity.class
+1369091979955 363 4002280ae941131a844f6c345231cb0ef5d2df95 T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\classes\debug\com\example\gradecalculator\BuildConfig.class
+1369093625799 767 a74496441a8e0f411babe33ce511b13ef62dde79 T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\classes\debug\com\example\gradecalculator\R.class
+1369093625798 458 624edc7f68698dc18c9e87592f8df1f758585905 T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\classes\debug\com\example\gradecalculator\R$style.class
+1369093625796 544 c9a11d46ec9aaa43b23eb05c9e9e1ac0a30044a7 T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\classes\debug\com\example\gradecalculator\R$string.class
+1369093625790 533 14c22183ddbe4b736f9c0710e7ee54140772afa0 T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\classes\debug\com\example\gradecalculator\R$dimen.class

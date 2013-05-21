@@ -1,0 +1,13 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1369091979261 244 045ff451db7cd8e61285502b8c9bbf7405f2078d T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\res\all\debug\menu\main.xml
+1369091979265 210 c41731f5631a90fa989588ef97e9476fc244b438 T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\res\all\debug\values-v11\values.xml
+1369093625281 929 5da6cac650cd86c17e294942fc199f250c10728d T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\res\all\debug\values\values.xml
+1369091979261 7176 ac8d6e5cde49c2735d394e4a37f40a41803f885a T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\res\all\debug\drawable-xxhdpi\ic_launcher.png
+1369091979261 2061 aa4014d3a21220335bfc20884feb8bb3a7eff961 T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\res\all\debug\drawable-mdpi\ic_launcher.png
+1369091979265 224 3bee0d9a6f0efbaf11495ad45fdeb8f71aee62e8 T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\res\all\debug\values-v14\values.xml
+1369091979276 4535 c54ffcd94d429be6d7a0eec4c95daf5436a71d4f T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\res\all\debug\drawable-xhdpi\ic_launcher.png
+1369093625274 1052 9335b15853a4fb751d0f2aca535606afa6ae76e6 T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\res\all\debug\layout\activity_main.xml
+1369091979261 3263 26c2789a9d127bcb1cace755189867fe848da875 T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\res\all\debug\drawable-hdpi\ic_launcher.png
+1369091979266 130 90e37035f35f83953c491e73e930b7aea297a472 T:\Andrew\My Documents\AndroidStudioProjects\GradeCalculator\build\res\all\debug\values-sw720dp-land\values.xml
