@@ -25,7 +25,7 @@ public class DatabaseConstants {
         Sequence + " INTEGER NOT NULL, " +
         Name     + " TEXT NOT NULL, " +
         GPA      + " REAL, " +
-        Credits  + " REAL " +
+        Credits  + " INTEGER " +
         ")";
   }
 
@@ -42,7 +42,7 @@ public class DatabaseConstants {
         "FOREIGN KEY("+SemesterId+")" + " REFERENCES semesters(semesterid), " +
         Name     + " TEXT NOT NULL, " +
         Grade    + " REAL NOT NULL, " +
-        Credits  + " REAL NOT NULL" +
+        Credits  + " INTEGER NOT NULL" +
         ")";
   }
 
