@@ -14,6 +14,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
   public void onCreate(SQLiteDatabase sqLiteDatabase) {
     sqLiteDatabase.execSQL(DatabaseConstants.Semesters.CREATE_TABLE);
     sqLiteDatabase.execSQL(DatabaseConstants.Courses.CREATE_TABLE);
+    sqLiteDatabase.execSQL(DatabaseConstants.GradingScale.CREATE_TABLE);
   }
 
   @Override
