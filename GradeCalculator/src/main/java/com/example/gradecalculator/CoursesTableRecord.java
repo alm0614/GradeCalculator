@@ -3,9 +3,9 @@ package com.example.gradecalculator;
 /**
  * Created by Andrew on 5/20/13.
  */
-public class CoursesTable {
-  private long id;
-  private long semester_id;
+public class CoursesTableRecord {
+  private int id;
+  private int semester_id;
   private String name;
   private Integer credits;
   private Double grade;
@@ -14,15 +14,15 @@ public class CoursesTable {
     return id;
   }
 
-  public void setId(long id) {
+  public void setId(int id) {
     this.id = id;
   }
 
-  public long getSemester_id() {
+  public int getSemester_id() {
     return semester_id;
   }
 
-  public void setSemester_id(long semester_id) {
+  public void setSemester_id(int semester_id) {
     this.semester_id = semester_id;
   }
 

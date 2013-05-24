@@ -3,18 +3,18 @@ package com.example.gradecalculator;
 /**
  * Created by Andrew on 5/20/13.
  */
-public class SemestersTable {
-  private long id;
+public class SemestersTableRecord {
+  private int id;
   private int sequence;
   private String name;
   private double gpa;
   private int credits;
 
-  public long getId() {
+  public int getId() {
     return id;
   }
 
-  public void setId(long id) {
+  public void setId(int id) {
     this.id = id;
   }
 

@@ -5,8 +5,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class MySQLiteHelper extends SQLiteOpenHelper {
-  public MySQLiteHelper(Context context){
+public class MySQLiteDBHelper extends SQLiteOpenHelper {
+  public MySQLiteDBHelper(Context context){
     super(context,DatabaseConstants.DATABASE_NAME,null, DatabaseConstants.DATABASE_VERSION);
   }
 
@@ -19,7 +19,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
   @Override
   public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i2) {
-    Log.w(MySQLiteHelper.class.getName(),
+    Log.w(MySQLiteDBHelper.class.getName(),
         "Upgrading database from version " + i + " to " + i2);
   }
 }
