@@ -11,34 +11,33 @@ public class DatabaseConstants {
   private DatabaseConstants() {} //prevent copying
   public static final String DATABASE_NAME = "gradecalc.db";
   public static final Integer DATABASE_VERSION = 1;
+  public static final String COLUMN_ID = "_id";
   /** table name and column definitions  **/
   public static abstract class Semesters implements BaseColumns{
     public static final String TABLE_NAME = "semesters";
-    public static final String ID = "semesterid";
     public static final String Sequence = "sequence";
     public static final String Name = "name";
     public static final String GPA = "gpa";
     public static final String Credits = "credits";
     public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME +
         "(" +
-        ID       + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-        Sequence + " INTEGER NOT NULL, " +
-        Name     + " TEXT NOT NULL, " +
-        GPA      + " REAL, " +
-        Credits  + " INTEGER " +
+        COLUMN_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        Sequence   + " INTEGER NOT NULL, " +
+        Name       + " TEXT NOT NULL, " +
+        GPA        + " REAL, " +
+        Credits    + " INTEGER " +
         ")";
   }
 
   public static abstract class Courses implements BaseColumns{
     public static final String TABLE_NAME = "courses";
-    public static final String ID = "courseId";
     public static final String SemesterId = "semesterid";
     public static final String Name = "name";
     public static final String Credits = "credits";
     public static final String Grade = "grade";
     public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME +
         "(" +
-        ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
         "FOREIGN KEY("+SemesterId+")" + " REFERENCES semesters(semesterid), " +
         Name     + " TEXT NOT NULL, " +
         Grade    + " REAL NOT NULL, " +
@@ -52,8 +51,9 @@ public class DatabaseConstants {
     public static final String Value = "value";
     public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME +
         "(" +
-        Name + " TEXT PRIMARY KEY, " +
-        Value + " REAL NOT NULL" +
+        COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT " +
+        Name      + " TEXT PRIMARY KEY, " +
+        Value     + " REAL NOT NULL" +
         ")";
 
   }
