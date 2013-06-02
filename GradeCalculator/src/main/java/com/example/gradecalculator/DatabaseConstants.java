@@ -25,7 +25,8 @@ public class DatabaseConstants {
         Sequence   + " INTEGER NOT NULL, " +
         Name       + " TEXT NOT NULL, " +
         GPA        + " REAL, " +
-        Credits    + " INTEGER " +
+        Credits    + " INTEGER, " +
+        "UNIQUE ("+ Sequence +")" +
         ")";
   }
 

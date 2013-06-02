@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
     _testListView = (ListView) findViewById(R.id.semesterListView);
     _arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, testArray);
     _testListView.setAdapter(_arrayAdapter);
-
+    this.deleteDatabase(DatabaseConstants.DATABASE_NAME);
     _db = new DatabaseAccessors(this);
     try
     {
@@ -35,9 +35,17 @@ public class MainActivity extends Activity {
     {
       e.printStackTrace();
     }
-    _db.addSemester(1,"Testing", 3.0, 15);
+    //_db.deleteAllSemesters();
+    //_db.addSemester(1,"Testing", 3.0, 15);
+    //_db.addSemester(1, "Spring 2009", 3.5, 18);
     List<SemestersTableRecord> semesters =  _db.getAllSemesters ();
-    Log.i("GradeCalculator", semesters.toString());
+    for (SemestersTableRecord i : semesters)
+    {
+      String semester = "";
+      semester += i.getId() + " " + i.getSequence() + " " + i.getName() + " " + i.getCredits() + " " + i.getGpa();
+
+      Log.i("GradeCalculator", semester);
+    }
 
   }
 

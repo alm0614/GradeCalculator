@@ -104,6 +104,10 @@ public class DatabaseAccessors {
     return newSemester;
   }
 
+  public void deleteAllSemesters()
+  {
+    db.delete(DatabaseConstants.Semesters.TABLE_NAME,null,null);
+  }
   public CoursesTableRecord addCourse(Integer semester_id, String name, Double grade, Integer credits){
     ContentValues values = new ContentValues();
     values.put(DatabaseConstants.Courses.SemesterId, semester_id);
@@ -142,7 +146,6 @@ public class DatabaseAccessors {
   public GradingScaleTableRecord updateGradingScale(){
 
   }*/
-
   private SemestersTableRecord cursorToSemester(Cursor cursor){
     SemestersTableRecord semester = new SemestersTableRecord();
     semester.setId(cursor.getInt(0));
