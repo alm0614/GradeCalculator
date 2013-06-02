@@ -38,10 +38,11 @@ public class DatabaseConstants {
     public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME +
         "(" +
         COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-        "FOREIGN KEY("+SemesterId+")" + " REFERENCES semesters(semesterid), " +
+        SemesterId + " INTEGER, " +
         Name     + " TEXT NOT NULL, " +
         Grade    + " REAL NOT NULL, " +
-        Credits  + " INTEGER NOT NULL" +
+        Credits  + " INTEGER NOT NULL, " +
+        "FOREIGN KEY("+SemesterId+")" + " REFERENCES "+Semesters.TABLE_NAME+ "("+ COLUMN_ID + ") " +
         ")";
   }
 
@@ -51,8 +52,8 @@ public class DatabaseConstants {
     public static final String Value = "value";
     public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME +
         "(" +
-        COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT " +
-        Name      + " TEXT PRIMARY KEY, " +
+        COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        Name      + " TEXT NOT NULL, " +
         Value     + " REAL NOT NULL" +
         ")";
 

@@ -6,15 +6,18 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import java.util.ArrayList;
+import java.sql.SQLException;
+import java.util.List;
 
 public class MainActivity extends Activity {
   String [] testArray = {"TESTING1", "TESTING2", "TESTING3", "TESTING4", "TESTING5", "TESTING6", "TESTING7"};
   private ListView _testListView;
   private ArrayAdapter _arrayAdapter;
+  private DatabaseAccessors _db;
+
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -22,6 +25,20 @@ public class MainActivity extends Activity {
     _testListView = (ListView) findViewById(R.id.semesterListView);
     _arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, testArray);
     _testListView.setAdapter(_arrayAdapter);
+
+    _db = new DatabaseAccessors(this);
+    try
+    {
+      _db.open();
+    }
+    catch (SQLException e)
+    {
+      e.printStackTrace();
+    }
+    _db.addSemester(1,"Testing", 3.0, 15);
+    List<SemestersTableRecord> semesters =  _db.getAllSemesters ();
+    Log.i("GradeCalculator", semesters.toString());
+
   }
 
 
