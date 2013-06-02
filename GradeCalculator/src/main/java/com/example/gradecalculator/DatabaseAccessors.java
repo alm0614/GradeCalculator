@@ -43,7 +43,7 @@ public class DatabaseAccessors {
   public List<SemestersTableRecord> getAllSemesters() {
     List<SemestersTableRecord> semesters = new ArrayList<SemestersTableRecord>();
 
-    Cursor cursor = db.query(DatabaseConstants.Semesters.TABLE_NAME, semestersColumns,null,null,null,null,null);
+    Cursor cursor = db.query(DatabaseConstants.Semesters.TABLE_NAME, semestersColumns,null,null,null,null,DatabaseConstants.Semesters.Sequence);
     cursor.moveToFirst();
     while(!cursor.isAfterLast())
     {
@@ -96,7 +96,7 @@ public class DatabaseAccessors {
     {
       values.put(DatabaseConstants.Semesters.Credits, credits);
     }
-    long insertId = db.insert(DatabaseConstants.Semesters.TABLE_NAME,null,values);
+    long insertId = db.insertOrThrow(DatabaseConstants.Semesters.TABLE_NAME,null,values);
     Cursor cursor = db.query(DatabaseConstants.Semesters.TABLE_NAME, semestersColumns, DatabaseConstants.COLUMN_ID + " = " + insertId,null,null,null,null);
     cursor.moveToFirst();
     SemestersTableRecord newSemester = cursorToSemester(cursor);
@@ -114,7 +114,7 @@ public class DatabaseAccessors {
     values.put(DatabaseConstants.Courses.Name, name);
     values.put(DatabaseConstants.Courses.Grade, grade);
     values.put(DatabaseConstants.Courses.Credits, credits);
-    long insertId = db.insert(DatabaseConstants.Courses.TABLE_NAME, null, values);
+    long insertId = db.insertOrThrow(DatabaseConstants.Courses.TABLE_NAME, null, values);
     Cursor cursor = db.query(DatabaseConstants.Courses.TABLE_NAME, coursesColumns, DatabaseConstants.COLUMN_ID + " = " + insertId,null,null,null,null);
     cursor.moveToFirst();
     CoursesTableRecord newCourse = cursorToCourse(cursor);
@@ -126,7 +126,7 @@ public class DatabaseAccessors {
     ContentValues values = new ContentValues();
     values.put(DatabaseConstants.GradingScale.Name, name);
     values.put(DatabaseConstants.GradingScale.Value, value);
-    long insertId = db.insert(DatabaseConstants.GradingScale.TABLE_NAME, null, values);
+    long insertId = db.insertOrThrow(DatabaseConstants.GradingScale.TABLE_NAME, null, values);
     Cursor cursor = db.query(DatabaseConstants.GradingScale.TABLE_NAME, coursesColumns, DatabaseConstants.COLUMN_ID + " = " + insertId,null,null,null,null);
     cursor.moveToFirst();
     GradingScaleTableRecord newGradingScale = cursorToGradingScale(cursor);

@@ -52,6 +52,6 @@ public class SemestersTableRecord {
 
   @Override
   public String toString() {
-    return name;
+    return name;// + " Credits: " + credits + " GPA: " + gpa;
   }
 }
