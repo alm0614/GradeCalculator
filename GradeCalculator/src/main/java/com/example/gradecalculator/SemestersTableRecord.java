@@ -4,21 +4,21 @@ package com.example.gradecalculator;
  * Created by Andrew on 5/20/13.
  */
 public class SemestersTableRecord {
-  private int id;
-  private int sequence;
+  private Integer id;
+  private Integer sequence;
   private String name;
-  private double gpa;
-  private int credits;
+  private Double gpa;
+  private Integer credits;
 
-  public int getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
-  public int getSequence() {
+  public Integer getSequence() {
     return sequence;
   }
 
@@ -46,7 +46,7 @@ public class SemestersTableRecord {
     return credits;
   }
 
-  public void setCredits(int credits) {
+  public void setCredits(Integer credits) {
     this.credits = credits;
   }
 

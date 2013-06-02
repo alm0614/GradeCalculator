@@ -38,11 +38,11 @@ public class DatabaseConstants {
     public static final String Grade = "grade";
     public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME +
         "(" +
-        COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-        SemesterId + " INTEGER, " +
-        Name     + " TEXT NOT NULL, " +
-        Grade    + " REAL NOT NULL, " +
-        Credits  + " INTEGER NOT NULL, " +
+        COLUMN_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        SemesterId + " INTEGER NOT NULL, " +
+        Name       + " TEXT NOT NULL, " +
+        Grade      + " REAL NOT NULL, " +
+        Credits    + " INTEGER NOT NULL, " +
         "FOREIGN KEY("+SemesterId+")" + " REFERENCES "+Semesters.TABLE_NAME+ "("+ COLUMN_ID + ") " +
         ")";
   }

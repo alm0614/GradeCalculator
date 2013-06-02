@@ -39,20 +39,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5827333-d6f0-4c8b-89fc-c11567925a43" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseAccessors.java" afterPath="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseAccessors.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/CoursesTableRecord.java" afterPath="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/CoursesTableRecord.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseConstants.java" afterPath="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseConstants.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/MainActivity.java" afterPath="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeCalculator/build/source/r/debug/com/example/gradecalculator/R.java" afterPath="$PROJECT_DIR$/GradeCalculator/build/source/r/debug/com/example/gradecalculator/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/SemestersTableRecord.java" afterPath="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/SemestersTableRecord.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeCalculator/build/res/all/debug/layout/activity_main.xml" afterPath="$PROJECT_DIR$/GradeCalculator/build/res/all/debug/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeCalculator/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/GradeCalculator/src/main/res/layout/activity_main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GradeCalculator.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/a.xml" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1369095851719" ignored="false" />
     <file path="/activity_main.xml" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1369092979499" ignored="false" />
-    <file path="/MainActivity.java" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1370204598376" ignored="false" />
+    <file path="/MainActivity.java" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1370216112968" ignored="false" />
     <file path="/a.groovy" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1369095853567" ignored="false" />
     <file path="/a.java" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1369096037496" ignored="false" />
     <file path="/sample.java" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1369096012911" ignored="false" />
-    <file path="/Dummy.txt" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1370202566037" ignored="false" />
+    <file path="/Dummy.txt" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1370216127776" ignored="false" />
     <file path="/DatabaseRoutines.java" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1369104001903" ignored="false" />
     <file path="/fragment.java" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1369102736982" ignored="false" />
     <file path="/MySQLiteHelper.java" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1369265340408" ignored="false" />
@@ -62,9 +66,10 @@
     <file path="/GradingScaleTable.java" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1369364278748" ignored="false" />
     <file path="/SemestersDBAccessors.java" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1369361315704" ignored="false" />
     <file path="/MySQLiteDBHelper.java" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1369361490742" ignored="false" />
-    <file path="/DatabaseAccessors.java" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1370204858368" ignored="false" />
-    <file path="/SemestersTableRecord.java" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1370203420584" ignored="false" />
+    <file path="/DatabaseAccessors.java" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1370213825519" ignored="false" />
+    <file path="/SemestersTableRecord.java" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1370214502708" ignored="false" />
     <file path="/CoursesTableRecord.java" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1369365693477" ignored="false" />
+    <file path="/GradingScaleTableRecord.java" changelist="c5827333-d6f0-4c8b-89fc-c11567925a43" time="1370213256547" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,31 +130,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="173" selection-start="2133" selection-end="2133" vertical-scroll-proportion="0.0">
+            <state line="79" column="37" selection-start="3165" selection-end="3165" vertical-scroll-proportion="0.7728055">
               <folding>
-                <element signature="e#1449#1470#0" expanded="true" />
-                <element signature="e#1763#1779#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1860#1881#0" expanded="true" />
+                <element signature="e#2159#2175#0" expanded="true" />
+                <element signature="e#2685#3181#0" expanded="true" />
+                <element signature="e#3174#3175#0" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_main.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/res/layout/activity_main.xml">
+          <provider editor-type-id="text-editor">
+            <state line="19" column="40" selection-start="946" selection-end="946" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="SemestersTableRecord.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/SemestersTableRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="18" selection-start="861" selection-end="861" vertical-scroll-proportion="0.0">
+            <state line="6" column="17" selection-start="132" selection-end="132" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseAccessors.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DatabaseAccessors.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseAccessors.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="128" column="36" selection-start="5118" selection-end="5118" vertical-scroll-proportion="0.030364372">
+            <state line="150" column="32" selection-start="5838" selection-end="5838" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1690#1712#0" expanded="true" />
@@ -179,7 +199,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/GradeCalculator/src/main/res/layout/semester_list_item.xml" />
         <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseRoutines.java" />
         <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseActivity.java" />
         <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/MySQLiteHelper.java" />
@@ -188,13 +207,14 @@
         <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/MySQLiteDBHelper.java" />
         <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/GradingScaleTable.java" />
         <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/CoursesTable.java" />
-        <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/GradingScaleTableRecord.java" />
-        <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/CoursesTableRecord.java" />
         <option value="$PROJECT_DIR$/GradeCalculator/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseConstants.java" />
-        <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/SemestersTableRecord.java" />
-        <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/MainActivity.java" />
         <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseAccessors.java" />
+        <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/SemestersTableRecord.java" />
+        <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/CoursesTableRecord.java" />
+        <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/GradingScaleTableRecord.java" />
+        <option value="$PROJECT_DIR$/GradeCalculator/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -450,10 +470,9 @@
     <property name="options.lastSelected" value="editor.preferences.import" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="GalaxyNexus" />
     <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
@@ -611,7 +630,7 @@
       <updated>1369091964186</updated>
       <workItem from="1369091974722" duration="22813000" />
       <workItem from="1370196311817" duration="24000" />
-      <workItem from="1370196354490" duration="7127000" />
+      <workItem from="1370196354490" duration="12884000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit">
       <created>1369106166446</created>
@@ -645,11 +664,15 @@
       <created>1370202570719</created>
       <updated>1370202570719</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="two line list view">
+      <created>1370204884342</created>
+      <updated>1370204884342</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29964000" />
+    <option name="totallyTimeSpent" value="35721000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -675,23 +698,23 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924226" sideWeight="0.5790646" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924226" sideWeight="0.5790646" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924226" sideWeight="0.73719376" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924226" sideWeight="0.73719376" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42093542" sideWeight="0.35965848" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32405347" sideWeight="0.41835645" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24493062" sideWeight="0.26837417" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32405347" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42093542" sideWeight="0.6403415" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32405347" sideWeight="0.58110994" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26280624" sideWeight="0.6403415" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297062" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24493062" sideWeight="0.5790646" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24493062" sideWeight="0.73719376" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297062" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -743,7 +766,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="working SQL" />
+    <option name="LAST_COMMIT_MESSAGE" value="working id value when clicked semesters" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -763,18 +786,13 @@
     <MESSAGE value="added database list routines" />
     <MESSAGE value="database add and get requests" />
     <MESSAGE value="working SQL" />
+    <MESSAGE value="two line list view" />
+    <MESSAGE value="working id value when clicked semesters" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/GradingScaleTableRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="26" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/CoursesTableRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="13" selection-start="141" selection-end="144" vertical-scroll-proportion="0.0">
@@ -799,33 +817,9 @@
         <state line="23" column="23" selection-start="1130" selection-end="1130" vertical-scroll-proportion="0.60746" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GradeCalculator/build/source/buildConfig/debug/com/example/gradecalculator/BuildConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="19" selection-start="108" selection-end="108" vertical-scroll-proportion="0.099415205" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeCalculator/build/source/r/debug/com/example/gradecalculator/R.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="19" selection-start="239" selection-end="239" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="4" selection-start="175" selection-end="175" vertical-scroll-proportion="0.13646789">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/GradingScaleTableRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="26" selection-start="214" selection-end="214" vertical-scroll-proportion="0.2951389">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/CoursesTableRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="141" selection-end="144" vertical-scroll-proportion="0.14409722">
           <folding />
         </state>
       </provider>
@@ -837,10 +831,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GradeCalculator/build/source/buildConfig/debug/com/example/gradecalculator/BuildConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="13" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeCalculator/build/source/r/debug/com/example/gradecalculator/R.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="233" selection-end="233" vertical-scroll-proportion="0.10691824">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="39" selection-start="1639" selection-end="1639" vertical-scroll-proportion="0.0">
+        <state line="55" column="29" selection-start="2200" selection-end="2200" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/CoursesTableRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="36" selection-start="446" selection-end="446" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/SemestersTableRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="17" selection-start="132" selection-end="132" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/GradingScaleTableRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="27" selection-start="262" selection-end="262" vertical-scroll-proportion="0.37421384">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseAccessors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="150" column="32" selection-start="5838" selection-end="5838" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1690#1712#0" expanded="true" />
+            <element signature="e#2232#2252#0" expanded="true" />
+            <element signature="e#2715#2740#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -849,36 +890,27 @@
         <state />
       </provider>
       <provider editor-type-id="text-editor">
-        <state line="19" column="45" selection-start="951" selection-end="951" vertical-scroll-proportion="0.0">
+        <state line="19" column="40" selection-start="946" selection-end="946" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeCalculator/build/res/all/debug/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="17" selection-start="92" selection-end="92" vertical-scroll-proportion="0.029259896">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="173" selection-start="2133" selection-end="2133" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1449#1470#0" expanded="true" />
-            <element signature="e#1763#1779#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/SemestersTableRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="18" selection-start="861" selection-end="861" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseAccessors.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="36" selection-start="5118" selection-end="5118" vertical-scroll-proportion="0.030364372">
+        <state line="79" column="37" selection-start="3165" selection-end="3165" vertical-scroll-proportion="0.7728055">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1690#1712#0" expanded="true" />
-            <element signature="e#2232#2252#0" expanded="true" />
-            <element signature="e#2715#2740#0" expanded="true" />
+            <element signature="e#1860#1881#0" expanded="true" />
+            <element signature="e#2159#2175#0" expanded="true" />
+            <element signature="e#2685#3181#0" expanded="true" />
+            <element signature="e#3174#3175#0" expanded="true" />
           </folding>
         </state>
       </provider>
