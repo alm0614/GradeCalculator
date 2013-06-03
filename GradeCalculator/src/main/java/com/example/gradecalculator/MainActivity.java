@@ -94,6 +94,8 @@ public class MainActivity extends ListActivity {
       case R.id.action_settings:
         Log.i(TAG, "Menu clicked");
         break;
+      case R.id.add_semester:
+        Log.i(TAG, "Add clicked");
       default:
         Log.i(TAG, "item ID" + item.getItemId());
     }
