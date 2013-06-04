@@ -6,5 +6,9 @@
     <string name="action_settings" >Settings
     </string>
     <string name="semester_list_heading">Semesters</string>
+    <string name="semester_name">Name</string>
+    <string name="credits">Credits</string>
+    <string name="optional">Optional</string>
+    <string name="gpa">GPA</string>
 
 </resources>

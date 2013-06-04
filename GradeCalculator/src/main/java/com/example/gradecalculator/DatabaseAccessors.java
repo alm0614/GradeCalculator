@@ -84,9 +84,14 @@ public class DatabaseAccessors {
   }
 
   //add requests
-  public SemestersTableRecord addSemester(Integer seq, String name, Double gpa, Integer credits) {
+  public SemestersTableRecord addSemester(String name, Double gpa, Integer credits) {
+    final String get_sequence_query = "SELECT MAX("+DatabaseConstants.Semesters.Sequence+") FROM " + DatabaseConstants.Semesters.TABLE_NAME;
+    Cursor getSeqCur = db.rawQuery(get_sequence_query,null);
+    getSeqCur.moveToFirst();
+    int max_seq = getSeqCur.getInt(0);
+    getSeqCur.close();
     ContentValues values = new ContentValues();
-    values.put(DatabaseConstants.Semesters.Sequence,seq );
+    values.put(DatabaseConstants.Semesters.Sequence,max_seq+1 );
     values.put(DatabaseConstants.Semesters.Name, name);
     if(gpa > 0)
     {

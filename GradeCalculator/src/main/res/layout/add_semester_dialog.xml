@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/semesterNameEntry" android:layout_alignParentTop="true" android:layout_alignParentRight="true"
+            android:inputType="text" android:layout_toRightOf="@+id/textView"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/semester_name"
+            android:id="@+id/textView" android:layout_alignParentLeft="true"
+            android:layout_alignBottom="@+id/semesterNameEntry" android:layout_alignParentTop="true"
+            android:gravity="center" android:layout_alignRight="@+id/textView2"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/credits"
+            android:id="@+id/textView2" android:layout_below="@+id/textView" android:layout_alignParentLeft="true"
+            android:layout_alignBottom="@+id/semesterCreditsEntry"
+            android:gravity="center"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/semesterCreditsEntry"
+            android:hint="@string/optional"
+            android:layout_below="@+id/semesterNameEntry" android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/textView2"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/gpa"
+            android:id="@+id/textView3" android:layout_below="@+id/textView2" android:layout_alignParentLeft="true"
+            android:layout_alignBottom="@+id/semesterGPAEntry"
+            android:gravity="center" android:layout_alignRight="@+id/textView2"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/semesterGPAEntry" android:layout_below="@+id/semesterCreditsEntry"
+            android:hint="@string/optional" android:layout_toRightOf="@+id/textView2"
+            android:layout_alignParentRight="true"/>
+</RelativeLayout>

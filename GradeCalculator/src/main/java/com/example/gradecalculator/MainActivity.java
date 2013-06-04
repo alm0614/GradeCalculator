@@ -1,15 +1,19 @@
 package com.example.gradecalculator;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -17,14 +21,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static android.widget.Toast.LENGTH_SHORT;
-
 public class MainActivity extends ListActivity {
   String [] testArray = {"TESTING1", "TESTING2", "TESTING3", "TESTING4", "TESTING5", "TESTING6", "TESTING7"};
   private ListView _semestersListView;
   private SimpleAdapter _simpleAdapter;
   private DatabaseAccessors _db;
   private String TAG = "GradeCalculator";
+  private Integer CUR_SEQUENCE = 0;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +46,8 @@ public class MainActivity extends ListActivity {
     }
     try {
       //_db.deleteAllSemesters();
-     // _db.addSemester(2,"Testing", 3.0, 15);
-     // _db.addSemester(1, "Spring 2009", 3.5, 18);
+     // _db.addSemester("Testing", 3.0, 15);
+      //_db.addSemester("Spring 2009", 3.5, 18);
     }
     catch (android.database.sqlite.SQLiteConstraintException e) {
       Log.e(TAG, "SQLiteConstraintException:" + e.getMessage());
@@ -55,6 +58,23 @@ public class MainActivity extends ListActivity {
     catch (Exception e) {
       Log.e(TAG, "Exception:" + e.getMessage());
     }
+
+    _semestersListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+      @Override
+      public void onItemClick(AdapterView<?> adapterView, View view, int pos, long id) {
+        HashMap<String, String> clickedSemester = (HashMap<String, String>) _semestersListView.getItemAtPosition(pos);
+        String semesterId = clickedSemester.get("id");
+        Log.i(TAG, "id " + semesterId);
+      }
+    });
+    drawSemestersList();
+  }
+
+  public void drawSemestersList()
+  {
+    Log.i(TAG, "drawing list");
+
+    _semestersListView.invalidateViews();
     List<SemestersTableRecord> semesters =  _db.getAllSemesters ();
     List<Map<String, String>> listData= new ArrayList<Map<String, String>>();
     for (SemestersTableRecord i : semesters)
@@ -64,24 +84,22 @@ public class MainActivity extends ListActivity {
       Log.i(TAG, semester);
       Map<String, String> semesterItem = new HashMap<String, String>(3);
       semesterItem.put("name", i.getName());
-      semesterItem.put("info", "Credits: " + i.getCredits() + "    GPA: " + i.getGpa());
+      if(i.getCredits() > 0 && i.getGpa() > 0)
+      {
+        semesterItem.put("info", "Credits: " + i.getCredits() + "    GPA: " + i.getGpa());
+      }
+      else
+      {
+        semesterItem.put("info", "");
+      }
       semesterItem.put("id", Integer.toString(i.getId()));
+      CUR_SEQUENCE = i.getSequence();
       listData.add(semesterItem);
     }
     _simpleAdapter = new SimpleAdapter (this, listData,android.R.layout.simple_list_item_2,new String[] {"name", "info"}, new int[] {android.R.id.text1, android.R.id.text2});
     _semestersListView.setAdapter(_simpleAdapter);
-    _semestersListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-      @Override
-      public void onItemClick(AdapterView<?> adapterView, View view, int pos, long id) {
-        Log.i(TAG, "in onItemClick");
-        Toast.makeText(getApplicationContext(), "item clicked", LENGTH_SHORT).show();
-        HashMap<String, String> clickedSemester = (HashMap<String, String>) _semestersListView.getItemAtPosition(pos);
-        String semesterId = clickedSemester.get("id");
-        Log.i(TAG, "id " + semesterId);
-      }
-    });
-  }
 
+  }
   public boolean onCreateOptionsMenu(Menu menu) {
     // Inflate the menu; this adds items to the action bar if it is present.
     getMenuInflater().inflate(R.menu.main, menu);
@@ -96,10 +114,42 @@ public class MainActivity extends ListActivity {
         break;
       case R.id.add_semester:
         Log.i(TAG, "Add clicked");
+        addSemesterDialog();
+        break;
       default:
         Log.i(TAG, "item ID" + item.getItemId());
     }
     return true;
+  }
+
+  public void addSemesterDialog()
+  {
+    /*final Dialog dialog = new Dialog(this);
+    dialog.setContentView(R.layout.add_semester_dialog);
+    dialog.setTitle("Add Semester");
+    dialog.show();*/
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    LayoutInflater inflater = this.getLayoutInflater();
+    builder.setTitle("Add Semester");
+    builder.setView(inflater.inflate(R.layout.add_semester_dialog, null));
+    builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
+      @Override
+      public void onClick(DialogInterface dialogInterface, int i) {
+        Dialog dialog = (Dialog) dialogInterface;
+        EditText name = (EditText) dialog.findViewById(R.id.semesterNameEntry);
+        EditText credits = (EditText) dialog.findViewById(R.id.semesterCreditsEntry);
+        EditText gpa = (EditText) dialog.findViewById(R.id.semesterGPAEntry);
+        drawSemestersList();
+      }
+    });
+    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+      @Override
+      public void onClick(DialogInterface dialogInterface, int i) {
+        //do nothing
+      }
+    });
+    builder.show();
+
   }
 
 }
