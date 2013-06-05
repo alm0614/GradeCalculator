@@ -19,9 +19,8 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080007;
-        public static final int add_semester=0x7f080008;
-        public static final int button2=0x7f080006;
+        public static final int action_settings=0x7f080006;
+        public static final int add_semester=0x7f080007;
         public static final int semesterCreditsEntry=0x7f080003;
         public static final int semesterGPAEntry=0x7f080005;
         public static final int semesterNameEntry=0x7f080001;

@@ -10,10 +10,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
+import android.widget.*;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -44,20 +41,7 @@ public class MainActivity extends ListActivity {
     {
       e.printStackTrace();
     }
-    try {
-      //_db.deleteAllSemesters();
-     // _db.addSemester("Testing", 3.0, 15);
-      //_db.addSemester("Spring 2009", 3.5, 18);
-    }
-    catch (android.database.sqlite.SQLiteConstraintException e) {
-      Log.e(TAG, "SQLiteConstraintException:" + e.getMessage());
-    }
-    catch (android.database.sqlite.SQLiteException e) {
-      Log.e(TAG, "SQLiteException:" + e.getMessage());
-    }
-    catch (Exception e) {
-      Log.e(TAG, "Exception:" + e.getMessage());
-    }
+
 
     _semestersListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
       @Override
@@ -139,6 +123,35 @@ public class MainActivity extends ListActivity {
         EditText name = (EditText) dialog.findViewById(R.id.semesterNameEntry);
         EditText credits = (EditText) dialog.findViewById(R.id.semesterCreditsEntry);
         EditText gpa = (EditText) dialog.findViewById(R.id.semesterGPAEntry);
+        Double newGpa = 0.0;
+        Integer newCredits =0;
+        if(name.getText().toString() == "")
+        {
+          Toast.makeText(getApplicationContext(),"Enter a name",Toast.LENGTH_SHORT).show();
+        }
+        Log.i(TAG, name.toString() + ": " + name.getText().toString());
+        try{
+           newGpa =  (gpa.getText().length() == 0) ? 0 : Double.parseDouble(gpa.getText().toString());
+        }
+        catch(Exception e)
+        {
+          Log.i(TAG, "Error parsing newGPA or newCredits");
+          Toast.makeText(getApplicationContext(), "Invalid credits value", Toast.LENGTH_SHORT).show();
+          credits.getText().clear();
+          return;
+        }
+        try{
+           newCredits = (credits.getText().length() == 0) ? 0 : Integer.parseInt(credits.getText().toString());
+        }
+        catch(Exception e)
+        {
+          Log.i(TAG, "Error parsing newCredits");
+          Toast.makeText(getApplicationContext(), "Invalid gpa value", Toast.LENGTH_SHORT).show();
+          gpa.getText().clear();
+          return;
+        }
+
+        addSemesterToDb(name.getText().toString(), newGpa, newCredits);
         drawSemestersList();
       }
     });
@@ -150,6 +163,25 @@ public class MainActivity extends ListActivity {
     });
     builder.show();
 
+  }
+
+  public void addSemesterToDb(String name, Double gpa, Integer credits )
+  {
+    try {
+      //_db.deleteAllSemesters();
+      // _db.addSemester("Testing", 3.0, 15);
+      //_db.addSemester("Spring 2009", 3.5, 18);
+      _db.addSemester(name, gpa, credits);
+    }
+    catch (android.database.sqlite.SQLiteConstraintException e) {
+      Log.e(TAG, "SQLiteConstraintException:" + e.getMessage());
+    }
+    catch (android.database.sqlite.SQLiteException e) {
+      Log.e(TAG, "SQLiteException:" + e.getMessage());
+    }
+    catch (Exception e) {
+      Log.e(TAG, "Exception:" + e.getMessage());
+    }
   }
 
 }
