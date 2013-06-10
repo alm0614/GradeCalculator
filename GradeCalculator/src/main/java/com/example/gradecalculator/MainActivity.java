@@ -24,7 +24,6 @@ public class MainActivity extends ListActivity {
   private SimpleAdapter _simpleAdapter;
   private DatabaseAccessors _db;
   private String TAG = "GradeCalculator";
-  private Integer CUR_SEQUENCE = 0;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +50,43 @@ public class MainActivity extends ListActivity {
         Log.i(TAG, "id " + semesterId);
       }
     });
+
+    _semestersListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+      @Override
+      public boolean onItemLongClick(AdapterView<?> adapterView, View view, int pos, long l) {
+        HashMap<String, String> clickedSemester = (HashMap<String, String>) _semestersListView.getItemAtPosition(pos);
+        String semesterId = clickedSemester.get("id");
+        String semesterName = clickedSemester.get("name");
+        confirmDelete(semesterId, semesterName);
+
+
+        return true;
+      }
+    });
     drawSemestersList();
   }
 
+  public void confirmDelete(final String id, final String name)
+  {
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    builder.setMessage("Are you sure you want to delete " + name)
+            .setTitle("Delete Semester")
+            .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+              @Override
+              public void onClick(DialogInterface dialogInterface, int i) {
+                //delete
+                Log.i(TAG, "will delete "+ name);
+              }
+            })
+            .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+              @Override
+              public void onClick(DialogInterface dialogInterface, int i) {
+                //do nothing
+              }
+            });
+
+    builder.show();
+  }
   public void drawSemestersList()
   {
     Log.i(TAG, "drawing list");
@@ -64,7 +97,7 @@ public class MainActivity extends ListActivity {
     for (SemestersTableRecord i : semesters)
     {
       String semester = "";
-      semester += i.getId() + " " + i.getSequence() + " " + i.getName() + " " + i.getCredits() + " " + i.getGpa();
+      semester = i.getId() + " " + i.getSequence() + " " + i.getName() + " " + i.getCredits() + " " + i.getGpa();
       Log.i(TAG, semester);
       Map<String, String> semesterItem = new HashMap<String, String>(3);
       semesterItem.put("name", i.getName());
@@ -77,7 +110,6 @@ public class MainActivity extends ListActivity {
         semesterItem.put("info", "");
       }
       semesterItem.put("id", Integer.toString(i.getId()));
-      CUR_SEQUENCE = i.getSequence();
       listData.add(semesterItem);
     }
     _simpleAdapter = new SimpleAdapter (this, listData,android.R.layout.simple_list_item_2,new String[] {"name", "info"}, new int[] {android.R.id.text1, android.R.id.text2});
@@ -114,9 +146,10 @@ public class MainActivity extends ListActivity {
     dialog.show();*/
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
     LayoutInflater inflater = this.getLayoutInflater();
-    builder.setTitle("Add Semester");
+    builder.setTitle("Edit Semester");
     builder.setView(inflater.inflate(R.layout.add_semester_dialog, null));
-    builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
+
+    builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
       @Override
       public void onClick(DialogInterface dialogInterface, int i) {
         Dialog dialog = (Dialog) dialogInterface;
@@ -135,8 +168,8 @@ public class MainActivity extends ListActivity {
         }
         catch(Exception e)
         {
-          Log.i(TAG, "Error parsing newGPA or newCredits");
-          Toast.makeText(getApplicationContext(), "Invalid credits value", Toast.LENGTH_SHORT).show();
+          Log.i(TAG, "Error parsing newGPA ");
+          Toast.makeText(getApplicationContext(), "Invalid GPA Value", Toast.LENGTH_SHORT).show();
           credits.getText().clear();
           return;
         }
@@ -146,15 +179,18 @@ public class MainActivity extends ListActivity {
         catch(Exception e)
         {
           Log.i(TAG, "Error parsing newCredits");
-          Toast.makeText(getApplicationContext(), "Invalid gpa value", Toast.LENGTH_SHORT).show();
+          Toast.makeText(getApplicationContext(), "Invalid Credits Value", Toast.LENGTH_SHORT).show();
           gpa.getText().clear();
           return;
+
+
         }
 
         addSemesterToDb(name.getText().toString(), newGpa, newCredits);
         drawSemestersList();
       }
     });
+
     builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
       @Override
       public void onClick(DialogInterface dialogInterface, int i) {
