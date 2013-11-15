@@ -19,19 +19,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MainActivity extends ListActivity {
-  String [] testArray = {"TESTING1", "TESTING2", "TESTING3", "TESTING4", "TESTING5", "TESTING6", "TESTING7"};
-  private ListView _semestersListView;
+public class CourseActivity extends ListActivity {
+  private ListView _coursesListView;
   private SimpleAdapter _simpleAdapter;
   private DatabaseAccessors _db;
+  private String _semesterId;
   private String TAG = "GradeCalculator";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-    _semestersListView = (ListView) findViewById(android.R.id.list);
+    setContentView(R.layout.activity_courses);
+    _coursesListView = (ListView) findViewById(android.R.id.list);
     //this.deleteDatabase(DatabaseConstants.DATABASE_NAME);
+    Intent i = getIntent();
+    _semesterId = i.getStringExtra("SEMESTERID");
+    Log.i(TAG, "RECEIVED SEMESTER ID:" + _semesterId);
     _db = new DatabaseAccessors(this);
     try
     {
@@ -43,41 +46,37 @@ public class MainActivity extends ListActivity {
     }
 
 
-    _semestersListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    _coursesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
       @Override
       public void onItemClick(AdapterView<?> adapterView, View view, int pos, long id) {
-        HashMap<String, String> clickedSemester = (HashMap<String, String>) _semestersListView.getItemAtPosition(pos);
-        String semesterId = clickedSemester.get("id");
-        Log.i(TAG, "PASSED SEMESTER ID: " + semesterId);
-        Intent i = new Intent(getApplicationContext(), CourseActivity.class);
-        i.putExtra("SEMESTERID", semesterId);
-        startActivity(i);
+        //HashMap<String, String> clickedSemester = (HashMap<String, String>) _coursesListView.getItemAtPosition(pos);
+        //String semesterId = clickedSemester.get("id");
       }
     });
 
-    _semestersListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+    _coursesListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
       @Override
       public boolean onItemLongClick(AdapterView<?> adapterView, View view, int pos, long l) {
-        HashMap<String, String> clickedSemester = (HashMap<String, String>) _semestersListView.getItemAtPosition(pos);
-        String semesterId = clickedSemester.get("id");
-        String semesterName = clickedSemester.get("name");
-        confirmDelete(semesterId, semesterName);
+        HashMap<String, String> clickedCourse = (HashMap<String, String>) _coursesListView.getItemAtPosition(pos);
+        String courseId = clickedCourse.get("id");
+        String courseName = clickedCourse.get("name");
+        confirmDelete(courseId, courseName);
         return true;
       }
     });
-    drawSemestersList();
+    drawCoursesList();
   }
 
   public void confirmDelete(final String id, final String name)
   {
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
     builder.setMessage("Are you sure you want to delete " + name)
-            .setTitle("Delete Semester")
+            .setTitle("Delete Course")
             .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
               @Override
               public void onClick(DialogInterface dialogInterface, int i) {
-                _db.deleteSemester(Integer.parseInt(id));
-                drawSemestersList();
+               _db.deleteCourse(Integer.parseInt(_semesterId), Integer.parseInt(id));
+                drawCoursesList();
                 Log.i(TAG, "will delete "+ name);
               }
             })
@@ -90,38 +89,38 @@ public class MainActivity extends ListActivity {
 
     builder.show();
   }
-  public void drawSemestersList()
+  public void drawCoursesList()
   {
     Log.i(TAG, "drawing list");
 
-    _semestersListView.invalidateViews();
-    List<SemestersTableRecord> semesters =  _db.getAllSemesters ();
+    _coursesListView.invalidateViews();
+    List<CoursesTableRecord> courses =  _db.getAllCoursesForSemester(Integer.parseInt(_semesterId));
     List<Map<String, String>> listData= new ArrayList<Map<String, String>>();
-    for (SemestersTableRecord i : semesters)
+    for (CoursesTableRecord i : courses)
     {
-      String semester = "";
-      semester = i.getId() + " " + i.getSequence() + " " + i.getName() + " " + i.getCredits() + " " + i.getGpa();
-      Log.i(TAG, semester);
-      Map<String, String> semesterItem = new HashMap<String, String>(3);
-      semesterItem.put("name", i.getName());
-      if(i.getCredits() > 0 && i.getGpa() > 0)
+      String course = "";
+      course = i.getId() + " " + i.getName() + " " + i.getCredits() + " " + i.getGrade();
+      Log.i(TAG, course);
+      Map<String, String> courseItem = new HashMap<String, String>(3);
+      courseItem.put("name", i.getName());
+      if(i.getGrade() > 0)
       {
-        semesterItem.put("info", "Credits: " + i.getCredits() + "    GPA: " + i.getGpa());
+        courseItem.put("info", "Credits: " + i.getCredits() + "    Grade: " + i.getGrade());
       }
       else
       {
-        semesterItem.put("info", "");
+        courseItem.put("info","Credits: " + i.getCredits() );
       }
-      semesterItem.put("id", Integer.toString(i.getId()));
-      listData.add(semesterItem);
+      courseItem.put("id", Integer.toString(i.getId()));
+      listData.add(courseItem);
     }
     _simpleAdapter = new SimpleAdapter (this, listData,android.R.layout.simple_list_item_2,new String[] {"name", "info"}, new int[] {android.R.id.text1, android.R.id.text2});
-    _semestersListView.setAdapter(_simpleAdapter);
+    _coursesListView.setAdapter(_simpleAdapter);
 
   }
   public boolean onCreateOptionsMenu(Menu menu) {
     // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.main, menu);
+    getMenuInflater().inflate(R.menu.courses, menu);
     return true;
   }
 
@@ -131,9 +130,9 @@ public class MainActivity extends ListActivity {
       case R.id.action_settings:
         Log.i(TAG, "Menu clicked");
         break;
-      case R.id.add_semester:
+      case R.id.add_course:
         Log.i(TAG, "Add clicked");
-        addSemesterDialog();
+        addCourseDialog();
         break;
       default:
         Log.i(TAG, "item ID" + item.getItemId());
@@ -141,7 +140,7 @@ public class MainActivity extends ListActivity {
     return true;
   }
 
-  public void addSemesterDialog()
+  public void addCourseDialog()
   {
     /*final Dialog dialog = new Dialog(this);
     dialog.setContentView(R.layout.add_semester_dialog);
@@ -149,21 +148,21 @@ public class MainActivity extends ListActivity {
     dialog.show();*/
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
     LayoutInflater inflater = this.getLayoutInflater();
-    builder.setTitle("Edit Semester");
-    builder.setView(inflater.inflate(R.layout.add_semester_dialog, null));
+    builder.setTitle("Edit Course");
+    builder.setView(inflater.inflate(R.layout.add_course_dialog, null));
 
     builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
       @Override
       public void onClick(DialogInterface dialogInterface, int i) {
         Dialog dialog = (Dialog) dialogInterface;
-        EditText name = (EditText) dialog.findViewById(R.id.semesterNameEntry);
-        EditText credits = (EditText) dialog.findViewById(R.id.semesterCreditsEntry);
-        EditText gpa = (EditText) dialog.findViewById(R.id.semesterGPAEntry);
+        EditText name = (EditText) dialog.findViewById(R.id.courseNameEntry);
+        EditText credits = (EditText) dialog.findViewById(R.id.courseCreditsEntry);
+        EditText gpa = (EditText) dialog.findViewById(R.id.courseGPAEntry);
         Double newGpa = 0.0;
         Integer newCredits =0;
         if(name.getText().toString() == "")
         {
-          Toast.makeText(getApplicationContext(),"Enter a name",Toast.LENGTH_SHORT).show();
+          Toast.makeText(getApplicationContext(),"Enter a name", Toast.LENGTH_SHORT).show();
         }
         Log.i(TAG, name.toString() + ": " + name.getText().toString());
         try{
@@ -172,12 +171,12 @@ public class MainActivity extends ListActivity {
         catch(Exception e)
         {
           Log.i(TAG, "Error parsing newGPA ");
-          Toast.makeText(getApplicationContext(), "Invalid GPA Value", Toast.LENGTH_SHORT).show();
+          Toast.makeText(getApplicationContext(), "Invalid Grade Value", Toast.LENGTH_SHORT).show();
           credits.getText().clear();
           return;
         }
         try{
-           newCredits = (credits.getText().length() == 0) ? 0 : Integer.parseInt(credits.getText().toString());
+           newCredits = Integer.parseInt(credits.getText().toString());
         }
         catch(Exception e)
         {
@@ -188,9 +187,8 @@ public class MainActivity extends ListActivity {
 
 
         }
-
-        addSemesterToDb(name.getText().toString(), newGpa, newCredits);
-        drawSemestersList();
+        addCourseToDb(name.getText().toString(), newGpa, newCredits);
+        drawCoursesList();
       }
     });
 
@@ -204,13 +202,11 @@ public class MainActivity extends ListActivity {
 
   }
 
-  public void addSemesterToDb(String name, Double gpa, Integer credits )
+  public void addCourseToDb(String name, Double gpa, Integer credits )
   {
+    Log.i(TAG, "NAME: " + name + " " +  " GPA: " + gpa + " " + " CREDITS: " + credits);
     try {
-      //_db.deleteAllSemesters();
-      // _db.addSemester("Testing", 3.0, 15);
-      //_db.addSemester("Spring 2009", 3.5, 18);
-      _db.addSemester(name, gpa, credits);
+      _db.addCourse(Integer.parseInt(_semesterId), name , gpa, credits);
     }
     catch (android.database.sqlite.SQLiteConstraintException e) {
       Log.e(TAG, "SQLiteConstraintException:" + e.getMessage());

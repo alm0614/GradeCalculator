@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -24,8 +25,8 @@ public class DatabaseAccessors {
   private String[] coursesColumns = {DatabaseConstants.COLUMN_ID,
                                      DatabaseConstants.Courses.SemesterId,
                                      DatabaseConstants.Courses.Name,
-                                     DatabaseConstants.Courses.Credits,
-                                     DatabaseConstants.Courses.Grade};
+                                     DatabaseConstants.Courses.Grade,
+                                     DatabaseConstants.Courses.Credits};
 
   private String[] gradingScaleColumns = {DatabaseConstants.COLUMN_ID,
                                           DatabaseConstants.GradingScale.Name,
@@ -113,8 +114,22 @@ public class DatabaseAccessors {
   {
     db.delete(DatabaseConstants.Semesters.TABLE_NAME,null,null);
   }
+  public void deleteSemester(Integer semester_id)
+  {
+    db.delete(DatabaseConstants.Semesters.TABLE_NAME, DatabaseConstants.Semesters._ID + "=" + semester_id.toString(), null);
+  }
+  public void deleteAllCoursesForSemester(Integer semester_id)
+  {
+    db.delete(DatabaseConstants.Courses.TABLE_NAME, DatabaseConstants.Courses.SemesterId + "=" + semester_id.toString(), null);
+  }
+  public void deleteCourse(Integer semester_id, Integer course_id)
+  {
+    db.delete(DatabaseConstants.Courses.TABLE_NAME, DatabaseConstants.Courses.SemesterId + "=" + semester_id.toString() +
+              " AND " + DatabaseConstants.Courses._ID + "=" + course_id.toString(), null);
+  }
   public CoursesTableRecord addCourse(Integer semester_id, String name, Double grade, Integer credits){
     ContentValues values = new ContentValues();
+    Log.i("DB", "grade: " + grade + " credits: " + credits);
     values.put(DatabaseConstants.Courses.SemesterId, semester_id);
     values.put(DatabaseConstants.Courses.Name, name);
     values.put(DatabaseConstants.Courses.Grade, grade);

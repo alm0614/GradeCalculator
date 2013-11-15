@@ -7,8 +7,11 @@
 
     <string name="action_settings">Settings</string>
     <string name="app_name">Grade Calculator</string>
+    <string name="course_name">Name</string>
+    <string name="courses_list_heading">Courses</string>
     <string name="credits">Credits</string>
     <string name="gpa">GPA</string>
+    <string name="grade">Grade</string>
     <string name="optional">Optional</string>
     <string name="semester_list_heading">Semesters</string>
     <string name="semester_name">Name</string>
