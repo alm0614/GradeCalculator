@@ -68,6 +68,11 @@ public class MainActivity extends ListActivity {
     drawSemestersList();
   }
 
+  @Override
+  protected void onResume( ) {
+    super.onResume();
+    drawSemestersList();
+  }
   public void confirmDelete(final String id, final String name)
   {
     AlertDialog.Builder builder = new AlertDialog.Builder(this);

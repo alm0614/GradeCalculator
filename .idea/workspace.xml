@@ -55,16 +55,13 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="INFO" />
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/CourseActivity.java" line="106" />
-    <bookmark url="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseAccessors.java" line="167" mnemonic="9" />
+    <bookmark url="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseAccessors.java" line="169" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5827333-d6f0-4c8b-89fc-c11567925a43" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/CourseActivity.java" afterPath="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/CourseActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseAccessors.java" afterPath="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseAccessors.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeCalculator/build/source/r/debug/com/example/gradecalculator/R.java" afterPath="$PROJECT_DIR$/GradeCalculator/build/source/r/debug/com/example/gradecalculator/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeCalculator/src/main/res/layout/activity_courses.xml" afterPath="$PROJECT_DIR$/GradeCalculator/src/main/res/layout/activity_courses.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeCalculator/src/main/res/layout/add_course_dialog.xml" afterPath="$PROJECT_DIR$/GradeCalculator/src/main/res/layout/add_course_dialog.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/MainActivity.java" afterPath="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GradeCalculator.iws" />
@@ -132,7 +129,7 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="36" selection-start="2923" selection-end="2923" vertical-scroll-proportion="0.0" vertical-offset="1326" max-vertical-offset="3944">
+            <state line="79" column="40" selection-start="2741" selection-end="2741" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="3366">
               <folding />
             </state>
           </provider>
@@ -141,8 +138,11 @@
       <file leaf-file-name="CourseActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/CourseActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="232" column="6" selection-start="7971" selection-end="7971" vertical-scroll-proportion="0.843318" vertical-offset="2732" max-vertical-offset="3485">
-              <folding />
+            <state line="93" column="19" selection-start="3311" selection-end="3311" vertical-scroll-proportion="0.6946688" vertical-offset="624" max-vertical-offset="3672">
+              <folding>
+                <element signature="e#5481#7005#0" expanded="true" />
+                <element signature="e#6998#6999#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -192,13 +192,14 @@
       <file leaf-file-name="DatabaseAccessors.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseAccessors.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="164" column="57" selection-start="6939" selection-end="6939" vertical-scroll-proportion="0.0" vertical-offset="2561" max-vertical-offset="3655">
+            <state line="180" column="25" selection-start="7500" selection-end="7500" vertical-scroll-proportion="0.0" vertical-offset="2645" max-vertical-offset="4080">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1715#1737#0" expanded="true" />
-                <element signature="e#2260#2280#0" expanded="true" />
-                <element signature="e#2798#2823#0" expanded="true" />
-                <element signature="e#6702#6722#0" expanded="true" />
+                <element signature="e#1747#1769#0" expanded="true" />
+                <element signature="e#2292#2312#0" expanded="true" />
+                <element signature="e#2834#2859#0" expanded="true" />
+                <element signature="e#6743#6763#0" expanded="true" />
+                <element signature="e#7270#7290#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -287,11 +288,11 @@
         <option value="$PROJECT_DIR$/GradeCalculator/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/GradeCalculator/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/GradeCalculator/src/main/res/layout/add_semester_dialog.xml" />
-        <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/MainActivity.java" />
         <option value="$PROJECT_DIR$/GradeCalculator/src/main/res/menu/courses.xml" />
         <option value="$PROJECT_DIR$/GradeCalculator/src/main/res/layout/add_course_dialog.xml" />
-        <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseAccessors.java" />
         <option value="$PROJECT_DIR$/GradeCalculator/src/main/res/layout/activity_courses.xml" />
+        <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/MainActivity.java" />
+        <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseAccessors.java" />
         <option value="$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/CourseActivity.java" />
       </list>
     </option>
@@ -800,7 +801,11 @@
       <created>1384490451745</created>
       <updated>1384490451745</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="update gpa calculation.">
+      <created>1389318111250</created>
+      <updated>1389318111250</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -836,18 +841,18 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297062" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21768707" sideWeight="0.36103722" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2244898" sideWeight="0.36103722" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24493062" sideWeight="0.26837417" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32312927" sideWeight="0.57978725" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21768707" sideWeight="0.63896275" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2244898" sideWeight="0.63896275" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6703786" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924226" sideWeight="0.73719376" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18018617" sideWeight="0.7823129" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18018617" sideWeight="0.7755102" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879817" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.73719376" order="6" side_tool="false" content_ui="combo" />
@@ -928,7 +933,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="added courses screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="update gpa calculation." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -955,6 +960,7 @@
     <MESSAGE value="adding semesters" />
     <MESSAGE value="added long click listener/delete popup" />
     <MESSAGE value="added courses screen" />
+    <MESSAGE value="update gpa calculation." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1007,13 +1013,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="36" selection-start="2923" selection-end="2923" vertical-scroll-proportion="0.0" vertical-offset="638" max-vertical-offset="3281">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/res/layout/add_course_dialog.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
@@ -1038,19 +1037,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="39" selection-start="919" selection-end="919" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1190">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseAccessors.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="57" selection-start="6939" selection-end="6939" vertical-scroll-proportion="0.0" vertical-offset="2561" max-vertical-offset="3655">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1715#1737#0" expanded="true" />
-            <element signature="e#2260#2280#0" expanded="true" />
-            <element signature="e#2798#2823#0" expanded="true" />
-            <element signature="e#6702#6722#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1085,10 +1071,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="40" selection-start="2741" selection-end="2741" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="3366">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/DatabaseAccessors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="180" column="25" selection-start="7500" selection-end="7500" vertical-scroll-proportion="0.0" vertical-offset="2645" max-vertical-offset="4080">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1747#1769#0" expanded="true" />
+            <element signature="e#2292#2312#0" expanded="true" />
+            <element signature="e#2834#2859#0" expanded="true" />
+            <element signature="e#6743#6763#0" expanded="true" />
+            <element signature="e#7270#7290#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GradeCalculator/src/main/java/com/example/gradecalculator/CourseActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="232" column="6" selection-start="7971" selection-end="7971" vertical-scroll-proportion="0.843318" vertical-offset="2732" max-vertical-offset="3485">
-          <folding />
+        <state line="93" column="19" selection-start="3311" selection-end="3311" vertical-scroll-proportion="0.6946688" vertical-offset="624" max-vertical-offset="3672">
+          <folding>
+            <element signature="e#5481#7005#0" expanded="true" />
+            <element signature="e#6998#6999#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

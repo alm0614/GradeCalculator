@@ -64,8 +64,9 @@ public class CourseActivity extends ListActivity {
         return true;
       }
     });
+
     drawCoursesList();
-    calculateSemesterGPA();
+    updateSemesterGPA();
   }
 
   public void confirmDelete(final String id, final String name)
@@ -78,6 +79,8 @@ public class CourseActivity extends ListActivity {
               public void onClick(DialogInterface dialogInterface, int i) {
                _db.deleteCourse(Integer.parseInt(_semesterId), Integer.parseInt(id));
                 drawCoursesList();
+                updateSemesterCredits();
+                updateSemesterGPA();
                 Log.i(TAG, "will delete "+ name);
               }
             })
@@ -185,8 +188,6 @@ public class CourseActivity extends ListActivity {
           Toast.makeText(getApplicationContext(), "Invalid Credits Value", Toast.LENGTH_SHORT).show();
           gpa.getText().clear();
           return;
-
-
         }
         addCourseToDb(name.getText().toString(), newGpa, newCredits);
         drawCoursesList();
@@ -218,10 +219,11 @@ public class CourseActivity extends ListActivity {
     catch (Exception e) {
       Log.e(TAG, "Exception:" + e.getMessage());
     }
-    calculateSemesterGPA();
+    updateSemesterGPA();
+    updateSemesterCredits();
   }
 
-  public void calculateSemesterGPA()
+  public void updateSemesterGPA()
   {
     Double gpa = _db.calculateSemesterGPA(_semesterId);
     if(gpa.isNaN())
@@ -232,7 +234,13 @@ public class CourseActivity extends ListActivity {
     {
       _currentGpaLabel.setText(gpa.toString());
     }
+    _db.updateSemesterGPA(_semesterId, gpa);
 
+  }
+  public void updateSemesterCredits()
+  {
+    Integer credits = _db.calculateSemesterCredits(_semesterId);
+    _db.updateSemesterCredits(_semesterId, credits);
   }
 
 }

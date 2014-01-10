@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,7 +60,7 @@ public class DatabaseAccessors {
 
   public List<CoursesTableRecord> getAllCoursesForSemester(String semester_id){
     List<CoursesTableRecord> courses = new ArrayList<CoursesTableRecord>();
-    Cursor cursor =  db.query(DatabaseConstants.Courses.TABLE_NAME, coursesColumns, DatabaseConstants.Courses.SemesterId + " = " + semester_id,null,null,null,null);
+    Cursor cursor =  db.query(DatabaseConstants.Courses.TABLE_NAME, coursesColumns, DatabaseConstants.Courses.SemesterId + " = " + semester_id, null, null, null, null);
     cursor.moveToFirst();
     while(!cursor.isAfterLast())
     {
@@ -147,7 +148,7 @@ public class DatabaseAccessors {
     values.put(DatabaseConstants.GradingScale.Name, name);
     values.put(DatabaseConstants.GradingScale.Value, value);
     long insertId = db.insertOrThrow(DatabaseConstants.GradingScale.TABLE_NAME, null, values);
-    Cursor cursor = db.query(DatabaseConstants.GradingScale.TABLE_NAME, coursesColumns, DatabaseConstants.COLUMN_ID + " = " + insertId,null,null,null,null);
+    Cursor cursor = db.query(DatabaseConstants.GradingScale.TABLE_NAME, gradingScaleColumns, DatabaseConstants.COLUMN_ID + " = " + insertId,null,null,null,null);
     cursor.moveToFirst();
     GradingScaleTableRecord newGradingScale = cursorToGradingScale(cursor);
     cursor.close();
@@ -165,7 +166,31 @@ public class DatabaseAccessors {
       cur_gp  += course.getGrade() * course.getCredits();
       total_credits += course.getCredits();
     }
-    return cur_gp/(double)total_credits;
+    Double gpa = cur_gp/(double)total_credits;
+    return Double.parseDouble(new DecimalFormat("#.##").format(gpa));
+  }
+  public Integer calculateSemesterCredits(String semester_id)
+  {
+    List<CoursesTableRecord> courses = new ArrayList<CoursesTableRecord>();
+    courses = getAllCoursesForSemester(semester_id);
+    int total_credits = 0;
+    for(CoursesTableRecord course : courses)
+    {
+      total_credits += course.getCredits();
+    }
+    return total_credits;
+  }
+  public void updateSemesterGPA(String semester_id, Double gpa)
+  {
+    ContentValues values = new ContentValues();
+    values.put(DatabaseConstants.Semesters.GPA, gpa);
+    db.update(DatabaseConstants.Semesters.TABLE_NAME, values, DatabaseConstants.Semesters._ID + "=" + semester_id,null);
+  }
+  public void updateSemesterCredits(String semester_id, Integer credits)
+  {
+    ContentValues values = new ContentValues();
+    values.put(DatabaseConstants.Semesters.Credits, credits);
+    db.update(DatabaseConstants.Semesters.TABLE_NAME, values,DatabaseConstants.Semesters._ID + "=" + semester_id, null);
   }
   //update requests
  /* public SemestersTableRecord updateSemester() {
