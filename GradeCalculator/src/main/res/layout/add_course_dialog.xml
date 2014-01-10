@@ -46,6 +46,6 @@
             android:inputType="numberDecimal"
             android:ems="10"
             android:id="@+id/courseGPAEntry" android:layout_below="@+id/courseCreditsEntry"
-            android:hint="@string/optional" android:layout_toRightOf="@+id/textView2"
+            android:layout_toRightOf="@+id/textView2"
             android:layout_alignParentRight="true"/>
 </RelativeLayout>

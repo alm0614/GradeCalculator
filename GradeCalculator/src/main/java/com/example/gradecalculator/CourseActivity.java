@@ -25,12 +25,12 @@ public class CourseActivity extends ListActivity {
   private DatabaseAccessors _db;
   private String _semesterId;
   private String TAG = "GradeCalculator";
-
-  @Override
+  private TextView _currentGpaLabel;
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_courses);
     _coursesListView = (ListView) findViewById(android.R.id.list);
+    _currentGpaLabel = (TextView) findViewById(R.id.currentGPA);
     //this.deleteDatabase(DatabaseConstants.DATABASE_NAME);
     Intent i = getIntent();
     _semesterId = i.getStringExtra("SEMESTERID");
@@ -65,6 +65,7 @@ public class CourseActivity extends ListActivity {
       }
     });
     drawCoursesList();
+    calculateSemesterGPA();
   }
 
   public void confirmDelete(final String id, final String name)
@@ -94,7 +95,7 @@ public class CourseActivity extends ListActivity {
     Log.i(TAG, "drawing list");
 
     _coursesListView.invalidateViews();
-    List<CoursesTableRecord> courses =  _db.getAllCoursesForSemester(Integer.parseInt(_semesterId));
+    List<CoursesTableRecord> courses =  _db.getAllCoursesForSemester(_semesterId);
     List<Map<String, String>> listData= new ArrayList<Map<String, String>>();
     for (CoursesTableRecord i : courses)
     {
@@ -158,8 +159,8 @@ public class CourseActivity extends ListActivity {
         EditText name = (EditText) dialog.findViewById(R.id.courseNameEntry);
         EditText credits = (EditText) dialog.findViewById(R.id.courseCreditsEntry);
         EditText gpa = (EditText) dialog.findViewById(R.id.courseGPAEntry);
-        Double newGpa = 0.0;
-        Integer newCredits =0;
+        Double newGpa;
+        Integer newCredits;
         if(name.getText().toString() == "")
         {
           Toast.makeText(getApplicationContext(),"Enter a name", Toast.LENGTH_SHORT).show();
@@ -217,6 +218,21 @@ public class CourseActivity extends ListActivity {
     catch (Exception e) {
       Log.e(TAG, "Exception:" + e.getMessage());
     }
+    calculateSemesterGPA();
+  }
+
+  public void calculateSemesterGPA()
+  {
+    Double gpa = _db.calculateSemesterGPA(_semesterId);
+    if(gpa.isNaN())
+    {
+      _currentGpaLabel.setText("0.0");
+    }
+    else
+    {
+      _currentGpaLabel.setText(gpa.toString());
+    }
+
   }
 
 }

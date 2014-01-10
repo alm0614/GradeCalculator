@@ -57,9 +57,9 @@ public class DatabaseAccessors {
 
   }
 
-  public List<CoursesTableRecord> getAllCoursesForSemester(int semester_id){
+  public List<CoursesTableRecord> getAllCoursesForSemester(String semester_id){
     List<CoursesTableRecord> courses = new ArrayList<CoursesTableRecord>();
-    Cursor cursor = db.query(DatabaseConstants.Courses.TABLE_NAME, coursesColumns, null,null,null,null,null);
+    Cursor cursor =  db.query(DatabaseConstants.Courses.TABLE_NAME, coursesColumns, DatabaseConstants.Courses.SemesterId + " = " + semester_id,null,null,null,null);
     cursor.moveToFirst();
     while(!cursor.isAfterLast())
     {
@@ -154,6 +154,19 @@ public class DatabaseAccessors {
     return newGradingScale;
   }
 
+  public Double calculateSemesterGPA(String semester_id)
+  {
+    List<CoursesTableRecord> courses = new ArrayList<CoursesTableRecord>();
+    courses = getAllCoursesForSemester(semester_id);
+    int total_credits = 0;
+    double cur_gp = 0.0;
+    for(CoursesTableRecord course : courses)
+    {
+      cur_gp  += course.getGrade() * course.getCredits();
+      total_credits += course.getCredits();
+    }
+    return cur_gp/(double)total_credits;
+  }
   //update requests
  /* public SemestersTableRecord updateSemester() {
 

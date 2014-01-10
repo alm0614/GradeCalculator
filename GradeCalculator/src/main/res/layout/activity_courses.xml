@@ -19,5 +19,13 @@
             android:layout_height="wrap_content"
             android:id="@android:id/list" android:layout_below="@+id/textView" android:layout_alignLeft="@+id/textView"
             android:headerDividersEnabled="false" android:clickable="false"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:id="@+id/currentGPA" android:textColor="#33b5e5"
+              android:textSize="@dimen/semester_heading_size" android:layout_alignTop="@+id/textView"
+              android:layout_alignRight="@android:id/list" android:text="0.0"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="GPA: " android:id="@+id/textView2" android:textColor="#33b5e5"
+              android:textSize="@dimen/semester_heading_size" android:layout_alignTop="@+id/currentGPA"
+              android:layout_toLeftOf="@+id/currentGPA"/>
 
 </RelativeLayout>
